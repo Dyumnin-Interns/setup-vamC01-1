@@ -1,0 +1,44 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x55de9948a860 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0x55de9948a9f0 .scope module, "dut_test" "dut_test" 3 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+o0x7f747c2d7018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55de9949a2a0_0 .net "a", 0 0, o0x7f747c2d7018;  0 drivers
+o0x7f747c2d7048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55de9949a370_0 .net "b", 0 0, o0x7f747c2d7048;  0 drivers
+v0x55de9949a440_0 .net "y", 0 0, L_0x55de9949a540;  1 drivers
+S_0x55de99451490 .scope module, "dut_test" "dut" 3 6, 4 1 0, S_0x55de9948a9f0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0x55de9949a540 .functor XOR 1, o0x7f747c2d7018, o0x7f747c2d7048, C4<0>, C4<0>;
+v0x55de994516c0_0 .net "a", 0 0, o0x7f747c2d7018;  alias, 0 drivers
+v0x55de9949a0c0_0 .net "b", 0 0, o0x7f747c2d7048;  alias, 0 drivers
+v0x55de9949a180_0 .net "y", 0 0, L_0x55de9949a540;  alias, 1 drivers
+    .scope S_0x55de9948a9f0;
+T_0 ;
+    %vpi_call/w 3 12 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call/w 3 13 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/mnt/c/Users/Ki/Desktop/projects/setup-vamC01-1/tests/wrappers/dut_test.v";
+    "/mnt/c/Users/Ki/Desktop/projects/setup-vamC01-1/tests/../hdl/dut.v";
